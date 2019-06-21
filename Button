@@ -1,0 +1,40 @@
+import React from 'react';
+import { Text, TouchableOpacity } from 'react-native';
+
+//create a button and give a touchableOpacity to give tuch feedback
+//add onPress function in the touchableOpacity to execute props function
+const Button = ({ onPress, children }) => {
+
+  return (
+    <TouchableOpacity onPress={onPress}
+    style={styles.ButtonStyle}>
+      <Text style={styles.textStyle}>
+        {children}
+      </Text>
+    </TouchableOpacity>
+  );
+};
+
+//add some styling for the button
+const styles = {
+  textStyle: {
+    alignSelf: 'center',
+    color: '#007aff',
+    fontSize: 16,
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+
+  ButtonStyle: {
+    flex: 1,
+    alignSelf: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#007aff',
+    marginLeft: 5,
+    marginRight: 5,
+  },
+};
+
+export { Button } ;
